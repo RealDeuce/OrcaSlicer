@@ -1372,14 +1372,14 @@ void StatusPanel::clean_tasklist_info()
 void StatusPanel::create_tasklist_info()
 {
     m_tasklist_caption_sizer = new wxBoxSizer(wxHORIZONTAL);
-    m_text_tasklist_caption  = new wxStaticText(this, wxID_ANY, _L("Printing List"), wxDefaultPosition, wxDefaultSize, 0);
+    m_text_tasklist_caption  = new wxStaticText(m_project_task_panel, wxID_ANY, _L("Printing List"), wxDefaultPosition, wxDefaultSize, 0);
     m_text_tasklist_caption->Wrap(-1);
     m_text_tasklist_caption->SetFont(Label::Body_16);
     m_text_tasklist_caption->SetForegroundColour(GROUP_TITLE_FONT_COL);
 
     m_tasklist_caption_sizer->Add(m_text_tasklist_caption, 0, wxLEFT | wxALIGN_CENTER_VERTICAL, GROUP_TITLE_LEFT_MARGIN);
 
-    auto staticline = new StaticLine(this);
+    auto staticline = new StaticLine(m_project_task_panel);
     staticline->SetLineColour(GROUP_STATIC_LINE_COL);
     m_tasklist_caption_sizer->Add(staticline, 1, wxRIGHT | wxLEFT | wxALIGN_CENTER_VERTICAL, GROUP_TITLE_LINE_MARGIN);
     m_tasklist_caption_sizer->Add(GROUP_TITLE_RIGHT_MARGIN - GROUP_TITLE_LINE_MARGIN, 0, 0, wxEXPAND, 0);
